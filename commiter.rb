@@ -19,6 +19,8 @@ if first_arg == "help" && ARGV[1] == nil
   }
 
   puts helpmsg
+
+  return
 end
 
 second_arg = ARGV[1].downcase
