@@ -1,6 +1,6 @@
 first_arg = ARGV[0].downcase
 
-if first_arg == "help"
+if first_arg == "help" && ARGV[1] == nil
   helpmsg = %{
     Usage
 
