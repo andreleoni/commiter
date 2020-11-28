@@ -4,13 +4,13 @@ if first_arg == "help"
   helpmsg = %{
     Usage
 
-    ruby commiter.rb PROJECT INTENTION "MESSAGE"
+    ruby commiter.rb PROJECT INTENTION MESSAGE
 
     Permitted intentions
     -b --Bug fix (bugfix)
     -s --Start project
     -f --Finish project
-    -d --Documentation
+    -d --Documentation or anyone comment on code only
     -c --Work in progress
     -r --Code review suggestion changes
     -p --Performance related changes
