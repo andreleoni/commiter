@@ -5,4 +5,7 @@
 * Reload terminal`
 * Use the "commit PROJECT TYPE MESSAGE" format to perform the commit after added files
 
+# Usage
+
+
 Have fun!

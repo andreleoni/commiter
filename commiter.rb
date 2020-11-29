@@ -4,7 +4,7 @@ if first_arg == "help" && ARGV[1] == nil
   helpmsg = %{
     Usage
 
-    ruby commiter.rb PROJECT INTENTION MESSAGE
+    CTX=test ruby commiter.rb INTENTION FULL MESSAGE
 
     Permitted intentions
     -b --Bug fix (bugfix)
@@ -23,28 +23,33 @@ if first_arg == "help" && ARGV[1] == nil
   return
 end
 
-second_arg = ARGV[1].downcase
-third_arg = ARGV[2..]
+third_arg = ARGV[1..]
+
+current_context = ENV["CTX"] || ENV["GLOBAL_COMMIT_CTX"] || "default"
+
+if current_context.length > "10"
+  puts "The lenth of context should not be greather than 10."
+end
 
 templatemsg = ""
 
 case second_arg
 when "-b"
-  templatemsg += ":bug:	bugfix(#{first_arg})"
+  templatemsg += ":bug:	bugfix(#{current_context})"
 when "-s"
-  templatemsg += ":tada: start(#{first_arg})"
+  templatemsg += ":tada: start(#{current_context})"
 when "-f"
-  templatemsg += ":package: finish(#{first_arg}"
+  templatemsg += ":package: finish(#{current_context}"
 when "-c"
-  templatemsg += ":construction: wip(#{first_arg})"
+  templatemsg += ":construction: wip(#{current_context})"
 when "-d"
-  templatemsg += ":pencil: doc(#{first_arg})"
+  templatemsg += ":pencil: doc(#{current_context})"
 when "-p"
-  templatemsg += ":racehorse: performance(#{first_arg})"
+  templatemsg += ":racehorse: performance(#{current_context})"
 when "-m"
-  templatemsg += ":wrench: maintenance(#{first_arg})"
+  templatemsg += ":wrench: maintenance(#{current_context})"
 when "-rem"
-  templatemsg += ":fire: codingremoval(#{first_arg})"
+  templatemsg += ":fire: codingremoval(#{current_context})"
 default
   raise "wrong args"
 end
