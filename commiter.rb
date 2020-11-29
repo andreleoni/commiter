@@ -23,17 +23,17 @@ if first_arg == "help" && ARGV[1] == nil
   return
 end
 
-third_arg = ARGV[1..]
+commit_msg = ARGV[1..]
 
 current_context = ENV["CTX"] || ENV["GLOBAL_COMMIT_CTX"] || "default"
 
-if current_context.length > "10"
+if current_context.length > 10
   puts "The lenth of context should not be greather than 10."
 end
 
 templatemsg = ""
 
-case second_arg
+case first_arg
 when "-b"
   templatemsg += ":bug:	bugfix(#{current_context})"
 when "-s"
@@ -54,6 +54,6 @@ default
   raise "wrong args"
 end
 
-templatemsg += " #{third_arg.join(" ")}"
+templatemsg += " #{commit_msg.join(" ")}"
 
 puts `git commit -m "#{templatemsg}"`
