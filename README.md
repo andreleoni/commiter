@@ -21,6 +21,27 @@ To set a global commit context, can be used the ./commit_setctx.sh script like t
 
 After the global context set, all commits will use this context except that commits that have the prefix `CTX=anothectx` on commit execution. If this extra param be set in the command, this will be the execution context.
 
+## Using the commiter script
+
+```
+    Usage
+
+    CTX=test ruby commiter.rb INTENTION FULL MESSAGE
+
+    Permitted intentions
+    -b --Bug fix (bugfix)
+    -s --Start project
+    -f --Finish project
+    -d --Documentation or anyone comment on code only
+    -c --Work in progress
+    -r --Code review suggestion changes
+    -p --Performance related changes
+    -m --Maintenance changes: linter, config updates, etc.
+    -rem --Code removing only
+```
+
+If CTX env not present, will bet the global ENV setted by the commit context script.
+
 #### Example 1
 
 ```
@@ -49,27 +70,6 @@ commit -b hahahha
 ```
 CTX=randomspec commit -m fix commit specs related with controller X
 ```
-
-## Using the commiter script
-
-```
-    Usage
-
-    CTX=test ruby commiter.rb INTENTION FULL MESSAGE
-
-    Permitted intentions
-    -b --Bug fix (bugfix)
-    -s --Start project
-    -f --Finish project
-    -d --Documentation or anyone comment on code only
-    -c --Work in progress
-    -r --Code review suggestion changes
-    -p --Performance related changes
-    -m --Maintenance changes: linter, config updates, etc.
-    -rem --Maintenance changes: linter, config updates, etc.
-```
-
-If CTX env not present, will bet the global ENV setted by the commit context script.
 
 # Easy setup method
 
