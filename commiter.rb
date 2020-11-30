@@ -15,7 +15,7 @@ if first_arg == "help" && ARGV[1] == nil
     -r --Code review suggestion changes
     -p --Performance related changes
     -m --Maintenance changes: linter, config updates, etc.
-    -rem --Maintenance changes: linter, config updates, etc.
+    -rem --Removing code
   }
 
   puts helpmsg
