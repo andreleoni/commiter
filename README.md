@@ -21,6 +21,34 @@ To set a global commit context, can be used the ./commit_setctx.sh script like t
 
 After the global context set, all commits will use this context except that commits that have the prefix `CTX=anothectx` on commit execution. If this extra param be set in the command, this will be the execution context.
 
+#### Example 1
+
+```
+# Set the next PR contexts based on Jira task
+commit-setctx PR-123
+
+# Start the PR execution
+commit -s create the bone of project
+
+# Wip the project
+commit -c implement cron class
+commit -c iojasoijdaios
+
+# Final commit of dev changes
+commit -f fix final specs
+
+# When have some code review adjustments
+commit -r code review adjustments
+
+# When have some bugs or another changes to fix some problem that ocurrend in project
+commit -b hahahha
+```
+
+#### Example 2
+
+```
+CTX=randomspec commit -m fix commit specs related with controller X
+```
 
 ## Using the commiter script
 
