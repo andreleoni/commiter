@@ -50,7 +50,9 @@ when "-m"
   templatemsg += ":wrench: maintenance(#{current_context})"
 when "-rem"
   templatemsg += ":fire: codingremoval(#{current_context})"
-default
+when "-r"
+  templatemsg += ":white_check_mark: codereview(#{current_context})"
+else
   raise "wrong args"
 end
 
