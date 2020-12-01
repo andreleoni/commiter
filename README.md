@@ -17,7 +17,7 @@ Global context should be used when you are working on a specific project for a l
 
 To set a global commit context, can be used the ./commit_setctx.sh script like the example:
 
-`./commit_setctx.sh globalctx`
+`. commit_setctx.sh globalctx`
 
 After the global context set, all commits will use this context except that commits that have the prefix `CTX=anothectx` on commit execution. If this extra param be set in the command, this will be the execution context.
 
@@ -79,7 +79,7 @@ This is the command that will easily add the following code to this bashrc.
 
 ```
 #### Alias to the commiter script https://github.com/andreleoni/commiter
-alias commit-ctx="/home/techuser/Documents/commiter/commit_setctx.sh"
+alias commit-ctx=". /home/techuser/Documents/commiter/commit_setctx.sh"
 alias commit="ruby /home/techuser/Documents/commiter/commiter.rb"
 ####
 ```
