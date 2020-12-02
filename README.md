@@ -1,27 +1,33 @@
+# Pre-requisites
+
+You need to have `ruby` installed for the commiter to work.
+
+If **not** installed you can follow the ruby's installation instruction through [here](https://github.com/rvm/ubuntu_rvm)
+
 # Commiter
 
-* Clone the project to a fixed place that should not be changed.
+* Clone the project into a fixed folder that should not be changed.
 * Run `./setup.sh`
-* Reload terminal`
+* Reload terminal
 * Follow the usage instructions
 
 # Usage
 
-## Setting a global commit context
+## Setting the global commit context
 
 ### Why use global context
 
-Global context should be used when you are working on a specific project for a long time. Does it will avoid to using the specific context on commit command.
+Global context should be used when you will work on a specific project for a long time. Doing this will avoid the need to set a specific context on commit command every time.
 
-### Real usage
+### Setting the context
 
-To set a global commit context, can be used the ./commit_setctx.sh script like the example:
+To set a global commit context the ./commit_setctx.sh script can be used like the example:
 
 `. commit_setctx.sh globalctx`
 
-After the global context set, all commits will use this context except that commits that have the prefix `CTX=anothectx` on commit execution. If this extra param be set in the command, this will be the execution context.
+After the global context is set, all commits will use this context. The only exception to it is when this prefix `CTX=anothectx` is added to a commit call. For this use only, the execution context will not be the global one, but the one added to the `CTX` environment variable.
 
-## Using the commiter script
+## Commiter script usage
 
 ```
     Usage
@@ -40,28 +46,26 @@ After the global context set, all commits will use this context except that comm
     -rem --Code removing only
 ```
 
-If CTX env not present, will bet the global ENV setted by the commit context script.
-
 #### Example 1
 
 ```
-# Set the next PR contexts based on Jira task
+# Set the next PR contexts based on the current Jira task
 commit-setctx PR-123
 
 # Start the PR execution
-commit -s create the bone of project
+commit -s create the skeleton of the project
 
-# Wip the project
+# Wip
 commit -c implement cron class
 commit -c iojasoijdaios
 
-# Final commit of dev changes
+# Final commit before code review
 commit -f fix final specs
 
-# When have some code review adjustments
+# Fix some code review adjustments
 commit -r code review adjustments
 
-# When have some bugs or another changes to fix some problem that ocurrend in project
+# Fix a bug or a problem that ocurred in the project
 commit -b hahahha
 ```
 
@@ -73,15 +77,11 @@ CTX=randomspec commit -m fix commit specs related with controller X
 
 # Easy setup method
 
-To easy setup this repository on `~/.bashrc`.
-
-This is the command that will easily add the following code to this bashrc.
+To easly setup the commiter, the execution of the `setup.sh` file will automatically include the following alias into `~/.bashrc`:
 
 ```
-#### Alias to the commiter script https://github.com/andreleoni/commiter
-alias commit-ctx=". /home/techuser/Documents/commiter/commit_setctx.sh"
-alias commit="ruby /home/techuser/Documents/commiter/commiter.rb"
-####
+alias commit-ctx=". ABSOLUTE_PATH_TO_REPOSITORY/commiter/commit_setctx.sh"
+alias commit="ruby ABSOLUTE_PATH_TO_REPOSITORY/commiter/commiter.rb"
 ```
 
 # Greetings!
