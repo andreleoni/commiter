@@ -2,7 +2,7 @@
 
 echo "starting setup..."
 
-echo "Adding the relative path: $(pwd). Don't change this repository path, or it will not works more!"
+echo "Adding the relative path: $(pwd). Do NOT change this repository path! It will NOT work anymore!"
 
 echo "\n" >> ~/.bashrc
 
