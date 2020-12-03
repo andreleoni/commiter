@@ -11,7 +11,7 @@ if first_arg == "help" && ARGV[1] == nil
     -s --Start project
     -f --Finish project
     -d --Documentation or anyone comment on code only
-    -c --Work in progress
+    -w --Work in progress
     -r --Code review suggestion changes
     -p --Performance related changes
     -m --Maintenance changes: linter, config updates, etc.
@@ -40,7 +40,7 @@ when "-s"
   templatemsg += ":tada: start(#{current_context})"
 when "-f"
   templatemsg += ":package: finish(#{current_context})"
-when "-c"
+when "-w"
   templatemsg += ":construction: wip(#{current_context})"
 when "-d"
   templatemsg += ":pencil: doc(#{current_context})"

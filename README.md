@@ -39,7 +39,7 @@ After the global context is set, all commits will use this context. The only exc
     -s --Start project
     -f --Finish project
     -d --Documentation or anyone comment on code only
-    -c --Work in progress
+    -w --Work in progress
     -r --Code review suggestion changes
     -p --Performance related changes
     -m --Maintenance changes: linter, config updates, etc.
