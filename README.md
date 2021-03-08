@@ -50,7 +50,7 @@ After the global context is set, all commits will use this context. The only exc
 
 ```
 # Set the next PR contexts based on the current Jira task
-commit-setctx PR-123
+commit-ctx PR-123
 
 # Start the PR execution
 commit -s create the skeleton of the project
