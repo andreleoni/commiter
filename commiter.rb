@@ -35,7 +35,7 @@ templatemsg = ""
 
 case first_arg
 when "-b"
-  templatemsg += ":bug:	bugfix(#{current_context})"
+  templatemsg += ":bug: bugfix(#{current_context})"
 when "-s"
   templatemsg += ":tada: start(#{current_context})"
 when "-f"
